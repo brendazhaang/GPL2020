@@ -62,7 +62,9 @@ public class D
 					}
 				}
 				
-				int newMinPrice = 100000000;
+				int newMinPrice = Integer.MAX_VALUE;
+				
+			
 				for (int i = 0; i < n; i++)
 				{
 					if (stuff[i][0] < newMinPrice && stuff[i][0] > minPrice)
@@ -72,9 +74,8 @@ public class D
 				
 				
 			} while (bought < k);
+			System.out.println(paid);
 		}
-		
-		System.out.println(paid);
 	}
 }
 		
