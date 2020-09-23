@@ -10,23 +10,27 @@ public class E
 		int count = 0;
 		for (int i = 0; i < n - 2; i++)
 		{
-			outerloop:
+			
 			for (int j = i + 3; j <= n; j++)
 			{
 				String substring = genes.substring(i, j);
-				String reverse = new String();
-				
-				for (int k = substring.length() - 1; k >= 0; k--)
-				{
-					reverse += substring.charAt(k);
-				}
-				
-				if (reverse.compareTo(substring) == 0)
-					count++; 
+				if (isPalindrome(substring))
+					count++;
 			}
 		
 		}
 		System.out.println(count);
+	}
+	
+	public static boolean isPalindrome(String substring)
+	{
+		for (int i = 0; i < substring.length() / 2; i++)
+		{
+			if (substring.charAt(i) != substring.charAt(substring.length() - 1 - i))
+				return false;
+		}
+		
+		return true;
 	}
 
 }
